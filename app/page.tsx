@@ -30,7 +30,7 @@ export default function Home() {
       <div id="star-gradient-overlay"></div>
       </div>
       <section className="z-10 flex flex-col items-center lg:h-screen pb-96 lg:pb-96">
-      <h1 className="text-6xl lg:text-8xl pt-[4rem] tracking-widest">$GANGSTA</h1>
+      <h1 className="text-6xl lg:text-8xl pt-[4rem] tracking-widest">$XIAOJIE</h1>
       <h2 className="text-3xl lg:text-5xl">CA:</h2>
       <div onClick={handleIncreaseClickCount} onTouchStart={handleMouseDown} onTouchEnd={handleMouseDown} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp} className="relative flex place-content-center">
         {isTongueVisible ? (
