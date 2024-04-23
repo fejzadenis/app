@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: #FFA3FF;
+  color: white;
+  --glow-rgb: 245 245 245;
+  
+  --light-gold-rgb: 255, 163, 255;
+  --dark-gold-rgb: 255, 163, 255;
+  
+  --primary-stripe-rgb: 230 230 230;
+  --secondary-stripe-rgb: 255, 163, 209;
+  --text-border-color: black;
+}
+
+body {
+  background-color: #FFA3FF;
+  --text-border-color: black;
+}
+
+* {
+  text-shadow:
+    -1px -1px 0 var(--text-border-color),  
+     1px -1px 0 var(--text-border-color),
+    -1px  1px 0 var(--text-border-color),
+     1px  1px 0 var(--text-border-color);
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+@keyframes pan {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+#star-container {
+  background: radial-gradient(rgb(var(--light-gold-rgb)), rgb(var(--dark-gold-rgb)));
+  height: 100%;  
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+#star-pattern {
+  background-image: url("https://assets.codepen.io/1468070/Star+Pattern+3.svg");
+  background-size: 10%;  
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  translate: -50% 0%;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  min-width: 1200px;
+  opacity: 0.10;
+  animation: pan 180s linear infinite;
+  will-change: background-position;
+}
+
+#star-gradient-overlay {
+  background: radial-gradient(circle, transparent 75%, rgb(var(--dark-gold-rgb)));
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+@keyframes move-background {
+  0% {
+    background-position: 0% 0%;
+  }
+  
+  100% {
+    background-position: -100% 0%;
+  }
+}
+
+@keyframes fall-1 {
+  0% {
+    transform: translate(0px, 0px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(0.25);
+    opacity: 0;
+  }
+  
+  5% {
+    transform: translate(10px, -10px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(1);
+    opacity: 1;
+  }
+  
+  100% {
+    transform: translate(25px, 200px) rotateX(180deg) rotateY(270deg) rotateZ(90deg) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-2 {
+  0% {
+    transform: translate(0px, 0px) rotateX(-20deg) rotateY(10deg) scale(0.25);
+    opacity: 0;
+  }
+  
+  10% {
+    transform: translate(-10px, -5px) rotateX(-20deg) rotateY(10deg) scale(1);
+    opacity: 1;
+  }
+  
+  100% {
+    transform: translate(-10px, 160px) rotateX(-90deg) rotateY(45deg) scale(0.25);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-3 {
+  0% {
+    transform: translate(0px, 0px) rotateX(0deg) rotateY(45deg) scale(0.5);
+    opacity: 0;
+  }
+  
+  15% {
+    transform: translate(7px, 5px) rotateX(0deg) rotateY(45deg) scale(1);
+    opacity: 1;
+  }
+  
+  100% {
+    transform: translate(20px, 120px) rotateX(-180deg) rotateY(-90deg) scale(0.5);
+    opacity: 0;
+  }
+}
